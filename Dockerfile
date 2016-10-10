@@ -6,7 +6,6 @@ ENV DIRPATH /opt/keepassx
 RUN mkdir $DIRPATH
 WORKDIR $DIRPATH
 RUN git clone https://github.com/keepassx/keepassx.git
-RUN mkdir build
-RUN cd build
+WORKDIR $DIRPATH/build
 RUN cmake ..
 RUN make
